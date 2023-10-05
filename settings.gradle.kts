@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "MyImgurApp"
 include(":app")
 include(":model")
+include(":datasource")
