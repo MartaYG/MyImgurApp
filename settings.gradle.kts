@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "MyImgurApp"
 include(":app")
+include(":model")
