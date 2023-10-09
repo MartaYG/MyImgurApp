@@ -1,6 +1,11 @@
 package com.martayg.datasource.di
 
+import android.app.Application
+import android.content.Context
+import android.content.SharedPreferences
 import com.martayg.datasource.BuildConfig
+import com.martayg.datasource.features.login.interfaces.SharedPreferencesManager
+import com.martayg.datasource.features.login.settings.SharedPreferencesManagerImpl
 import com.martayg.datasource.remote.service.interceptors.AuthInterceptor
 import dagger.Module
 import dagger.Provides
@@ -37,5 +42,13 @@ object NetworkModule {
             .build()
     }
 
+    @Singleton
+    @Provides
+    fun providesSharedPreferences(application: Application): SharedPreferences=
+        application.getSharedPreferences("myAppPrefs", Context.MODE_PRIVATE)
 
+    @Singleton
+    @Provides
+    fun providesSharedPreferencesManager(sharedPreferences: SharedPreferences): SharedPreferencesManager=
+        SharedPreferencesManagerImpl(sharedPreferences)
 }
