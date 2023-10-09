@@ -23,7 +23,9 @@ class LoginViewModel @Inject constructor(
     val loadingState: StateFlow<LoginResourceState<*>> get() = _loadingState
 
     fun authenticate(username: String, password: String){
+        _loadingState.update { LoginResourceState.Loading }
         viewModelScope.launch(Dispatchers.IO) {
+
             authenticateUseCase(username = username, password = password)
                 .catch { error ->
                     _loadingState.update { LoginResourceState.Error(error) }
