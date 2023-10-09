@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.martayg.datasource.BuildConfig
 import com.martayg.datasource.features.login.interfaces.SharedPreferencesManager
+import com.martayg.datasource.features.login.remote.api.LoginService
 import com.martayg.datasource.features.login.settings.SharedPreferencesManagerImpl
 import com.martayg.datasource.remote.service.interceptors.AuthInterceptor
 import dagger.Module
@@ -51,4 +52,9 @@ object NetworkModule {
     @Provides
     fun providesSharedPreferencesManager(sharedPreferences: SharedPreferences): SharedPreferencesManager=
         SharedPreferencesManagerImpl(sharedPreferences)
+
+    @Singleton
+    @Provides
+    fun providesLoginServiceClient(retrofit: Retrofit) : LoginService =
+        retrofit.create(LoginService::class.java)
 }

@@ -16,6 +16,9 @@ android {
         consumerProguardFiles("consumer-rules.pro")
 
         buildConfigField("String", "API_URL", "\"https://api.imgur.com/\"")
+        buildConfigField("String", "CLIENT_ID", "\"\"")
+        buildConfigField("String", "CLIENT_SECRET", "\"\"")
+
     }
 
     buildTypes {
