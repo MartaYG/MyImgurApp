@@ -1,5 +1,8 @@
 package com.martayg.data.di
 
+import com.martayg.data.factory.features.gallery.GalleryFactory
+import com.martayg.data.repository.features.gallery.impl.GalleryRepositoryImpl
+import com.martayg.data.repository.features.gallery.interfaz.GalleryRepository
 import com.martayg.data.repository.features.login.impl.LoginRepositoryImpl
 import com.martayg.data.repository.features.login.interfaz.LoginRepository
 import com.martayg.datasource.cache.db.MyImgurDatabase
@@ -38,4 +41,8 @@ object DataModule {
     @Provides
     fun providesGalleryCacheDataSource(myImgurDatabase: MyImgurDatabase, sharedPreferencesManager: SharedPreferencesManager): GalleryDataSource =
         GalleryCacheDataSource(myImgurDatabase,sharedPreferencesManager)
+
+    @Provides
+    fun providesGalleryRepository(galleryFactory: GalleryFactory): GalleryRepository =
+        GalleryRepositoryImpl(galleryFactory)
 }
