@@ -31,11 +31,13 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.martayg.myimgurapp.ui.features.login.state.LoginResourceState
 import com.martayg.myimgurapp.ui.features.login.viewmodels.LoginViewModel
+import com.martayg.myimgurapp.ui.navigation.state.ScreensRoute
 
 @Composable
-fun LoginScreen(loginViewModel: LoginViewModel) {
+fun LoginScreen(loginViewModel: LoginViewModel,navController: NavController) {
     val appContext = LocalContext.current
     val textColor = MaterialTheme.colorScheme.onSurface
 
@@ -150,8 +152,8 @@ fun LoginScreen(loginViewModel: LoginViewModel) {
                     }
 
                     is LoginResourceState.Success -> {
-                        Toast.makeText(appContext, "Autenticación exitosa", Toast.LENGTH_SHORT).show()
                         hasPressedLoginButton = false
+                        navController.navigate(route = ScreensRoute.GalleryScreen.route)
                     }
 
                     is LoginResourceState.Error -> {
