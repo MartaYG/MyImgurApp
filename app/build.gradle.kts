@@ -70,9 +70,15 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.44")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
     kapt("com.google.dagger:hilt-android-compiler:2.44")
+
+    //paging
+    implementation("androidx.paging:paging-runtime-ktx:3.2.1")
+    implementation("androidx.paging:paging-compose:1.0.0-alpha20")
 
     testImplementation("junit:junit:4.13.2")
 
