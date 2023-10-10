@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import com.martayg.datasource.BuildConfig
+import com.martayg.datasource.features.gallery.remote.api.GalleryService
 import com.martayg.datasource.features.login.interfaces.SharedPreferencesManager
 import com.martayg.datasource.features.login.remote.api.LoginService
 import com.martayg.datasource.features.login.settings.SharedPreferencesManagerImpl
@@ -57,4 +58,9 @@ object NetworkModule {
     @Provides
     fun providesLoginServiceClient(retrofit: Retrofit) : LoginService =
         retrofit.create(LoginService::class.java)
+
+    @Singleton
+    @Provides
+    fun providesGalleryServiceClient(retrofit: Retrofit) : GalleryService =
+        retrofit.create(GalleryService::class.java)
 }
