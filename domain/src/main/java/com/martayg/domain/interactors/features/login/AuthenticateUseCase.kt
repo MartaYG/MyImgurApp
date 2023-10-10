@@ -1,6 +1,6 @@
 package com.martayg.domain.interactors.features.login
 
-import com.martayg.data.repository.feature.login.interfaz.LoginRepository
+import com.martayg.data.repository.features.login.interfaz.LoginRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

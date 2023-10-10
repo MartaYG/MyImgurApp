@@ -1,4 +1,4 @@
-package com.martayg.data.repository.feature.login.interfaz
+package com.martayg.data.repository.features.login.interfaz
 
 import kotlinx.coroutines.flow.Flow
 
