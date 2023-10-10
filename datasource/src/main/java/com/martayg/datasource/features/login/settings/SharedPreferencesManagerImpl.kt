@@ -10,6 +10,7 @@ class SharedPreferencesManagerImpl @Inject constructor(
 
     companion object {
         private const val KEY_AUTH_TOKEN = "AuthToken"
+        private const val USERNAME_AUTH = "username"
     }
 
     override var authToken: String
@@ -19,6 +20,17 @@ class SharedPreferencesManagerImpl @Inject constructor(
         set(value) {
             this.preferences.edit().apply {
                 putString(KEY_AUTH_TOKEN, value)
+                apply()
+            }
+        }
+
+    override var usernameAuth: String
+        get() {
+            return this.preferences.getString(USERNAME_AUTH, "")!!
+        }
+        set(value) {
+            this.preferences.edit().apply {
+                putString(USERNAME_AUTH, value)
                 apply()
             }
         }

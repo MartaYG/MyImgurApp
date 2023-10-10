@@ -16,6 +16,7 @@ class LoginRemoteDataSource @Inject constructor(
         if(loginResponse.isSuccessful){
             loginResponse.body()?.let { tokenResponse ->
                 sharedPreferencesManager.authToken = tokenResponse.accessToken
+                sharedPreferencesManager.usernameAuth= tokenResponse.account_username
             }
             emit(true)
         }else{
