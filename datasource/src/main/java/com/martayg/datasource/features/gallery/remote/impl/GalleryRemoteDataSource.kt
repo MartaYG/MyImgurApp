@@ -25,4 +25,6 @@ class GalleryRemoteDataSource @Inject constructor(
             emit(emptyList())
         }
     }
+
+    override suspend fun insertImages(vararg image: Image) = throw NotImplementedError()
 }

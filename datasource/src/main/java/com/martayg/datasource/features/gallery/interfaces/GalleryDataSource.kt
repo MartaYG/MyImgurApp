@@ -5,4 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface GalleryDataSource {
     fun getAllImages(page:Int,perPage: Int): Flow<List<Image>>
+    suspend fun insertImages(vararg image: Image)
 }
