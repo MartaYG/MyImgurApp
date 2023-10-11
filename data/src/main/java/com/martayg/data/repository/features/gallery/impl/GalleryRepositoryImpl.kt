@@ -12,13 +12,13 @@ class GalleryRepositoryImpl @Inject constructor(
     private val galleryFactory: GalleryFactory
 ): GalleryRepository{
     override fun getAllImages(page: Int, perPage: Int): Flow<List<Image>> = channelFlow{
-         galleryFactory.RemoteGallery.getAllImages(page = page, perPage = perPage).collectLatest { remoteImages ->
+         galleryFactory.remoteGallery.getAllImages(page = page, perPage = perPage).collectLatest { remoteImages ->
 
              if(remoteImages.isNotEmpty()){
-                 galleryFactory.CacheGallery.insertImages(*remoteImages.toTypedArray())
+                 galleryFactory.cacheGallery.insertImages(*remoteImages.toTypedArray())
                  send(remoteImages)
              }else{
-                 galleryFactory.CacheGallery.getAllImages(page=page, perPage=perPage).collectLatest{ cacheImages ->
+                 galleryFactory.cacheGallery.getAllImages(page=page, perPage=perPage).collectLatest{ cacheImages ->
                      if(cacheImages.isEmpty()){
                          send(emptyList())
                      }else{
