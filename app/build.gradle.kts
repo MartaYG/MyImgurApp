@@ -67,6 +67,14 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.navigation:navigation-compose:2.5.3")
 
+    //coil
+    implementation("io.coil-kt:coil:2.3.0")
+    implementation("io.coil-kt:coil-base:2.3.0")
+    implementation("io.coil-kt:coil-compose:2.3.0")
+    implementation("io.coil-kt:coil-compose-base:2.3.0")
+    implementation("io.coil-kt:coil-gif:2.3.0")
+    implementation("io.coil-kt:coil-svg:2.3.0")
+
     //Hilt
     implementation("com.google.dagger:hilt-android:2.44")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
