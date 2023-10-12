@@ -27,6 +27,7 @@ Este proyecto se compone de 5 capas:
 - Flujos de kotlin con [Flow](https://developer.android.com/kotlin/flow?hl=es-419).
 - Base de datos local con [Room](https://developer.android.com/training/data-storage/room?hl=es-419).
 - Acceso a APIs Rest con [Retrofit](https://square.github.io/retrofit/).
+- Gestión de preferencias y configuraciones de la app con [Shared preferences](https://developer.android.com/training/data-storage/shared-preferences?hl=es-419).
 - Inyección de dependencias con [Dagger-Hilt](https://developer.android.com/training/dependency-injection/hilt-android?hl=es-419).
 - Paginación con [paging](https://developer.android.com/topic/libraries/architecture/paging/v3-overview?hl=es-419) en compose.
 - Login y galería con [Jetpack Compose](https://developer.android.com/jetpack/compose?hl=es-419).
